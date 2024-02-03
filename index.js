@@ -83,7 +83,10 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
-
+    inquirer.prompt(questions)
+    .then((answers) => {
+        console.log(answers);
+    });
 }
 
 // function call to initialize program
