@@ -79,6 +79,7 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) {
+    // write a file and catch a possible error, console log the outcome
     fs.writeFile(fileName, data, (err) => {
         if (err) {
             console.log(err);
