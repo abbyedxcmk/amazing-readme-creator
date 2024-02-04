@@ -29,25 +29,12 @@ const questions = [
         message: 'Provide usage information',
     },
 
-
-    {
-        type: 'input',
-        name: 'title',
-        message: 'What is your project title',
-    },
-
     {
 
         type: 'list',
         name: 'license',
         message: 'Choose a license for your application',
         choices: ['MIT', 'Apache 2.0', 'GPL 3.0', 'BSD 3', 'None'],
-    },
-
-    {
-        type: 'input',
-        name: 'title',
-        message: 'What is your project title',
     },
 
     {
