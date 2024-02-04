@@ -8,6 +8,7 @@ function generateMarkdown(data) {
 ## Table of Contents
 
 [*${data.title}*](#${data.title.split(' ').join('-').toLowerCase()})
+
 1. [Table of Contents](#table-of-contents)
 2. [Description](#description)
 3. [Installation](#installation)
@@ -18,8 +19,17 @@ function generateMarkdown(data) {
 8. [Questions](#questions)
 <hr>
 `
+  const badges = {
+    'MIT':
+    '![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)',
+    'Apache 2.0': '![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)',
+    'GPL 3.0': '![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)',
+    'BSD 3': '![License: BSD 3-Clause](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)',
+    'None': '![No License](https://img.shields.io/badge/License-None-red.svg)'
+  }
+
   // make outputMarkdown variable to contain MD syntax string for output
-  const outputMarkdown = `# ${data.title}
+  const outputMarkdown = `# ${data.title} ${badges[data.license]}
 
 ${TOC}
 
@@ -33,7 +43,7 @@ ${data.installation}
 ${data.usage}
 
 ## License
-${data.license}
+This project is covered under ${data.license} license. All rights reserved. Contact the author(s) for permission to use, modify, or distribute.
 
 ## Contributing
 ${data.contributing}
